@@ -11,4 +11,13 @@ export class QuizService {
       throw new Error("Error while creating quiz");
     }
   }
+
+  async getAllQuizzes(): Promise<IQuiz[]> {
+    try {
+      return await Quiz.find();
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error while fetching quizzes");
+    }
+  }
 }

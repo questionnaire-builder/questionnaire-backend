@@ -15,4 +15,9 @@ router.post("/", async (req: Request, res: Response) => {
   res.status(200).json(quiz);
 });
 
+router.get("/", async (req: Request, res: Response) => {
+  const quizzes = await quizService.getAllQuizzes();
+  res.status(200).json(quizzes);
+});
+
 export const quizRouter = router;
