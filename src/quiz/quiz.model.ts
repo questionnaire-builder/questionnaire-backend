@@ -8,5 +8,4 @@ const QuizSchema = new Schema<IQuiz>({
   completions: { type: Number, default: 0 },
 });
 
-
 export const Quiz = mongoose.model<IQuiz>("Quiz", QuizSchema);
