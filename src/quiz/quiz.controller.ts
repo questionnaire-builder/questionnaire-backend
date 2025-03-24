@@ -20,4 +20,14 @@ router.get("/", async (req: Request, res: Response) => {
   res.status(200).json(quizzes);
 });
 
+router.delete("/:quizId", async (req: Request, res: Response) => {
+  const { quizId } = req.params;
+  if (!quizId) {
+    res.status(400).json({ message: "Quiz id not found" });
+    return;
+  }
+  const deletedQuiz = await quizService.deleteQuiz(quizId);
+  res.status(200).json(deletedQuiz);
+});
+
 export const quizRouter = router;
