@@ -31,4 +31,14 @@ export class QuizService {
       throw new Error("Error while deleting quiz");
     }
   }
+
+  async getQuizById(quizId: string) {
+    try {
+      const quiz = await Quiz.findById(quizId);
+      return quiz;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error while fetching quiz");
+    }
+  }
 }
