@@ -17,7 +17,7 @@ async function main() {
   await connectToDatabase();
 
   app.use("/api/quizzes", quizRouter);
-  app.use("/api/questions", questionRouter)
+  app.use("/api/questions", questionRouter);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
