@@ -4,6 +4,7 @@ import express from "express";
 import { connectToDatabase } from "./db";
 import { quizRouter } from "./quiz/quiz.controller";
 import { questionRouter } from "./question/question.controller";
+import { answerRouter } from "./answer/answer.controller";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ async function main() {
 
   app.use("/api/quizzes", quizRouter);
   app.use("/api/questions", questionRouter);
+  app.use("/api/answers", answerRouter);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
