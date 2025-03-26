@@ -10,4 +10,12 @@ export class QuestionService {
       throw new Error(`Failed to create question: ${error}`);
     }
   }
+
+  async getQuestionsByQuizId(quizId: string): Promise<IQuestion[]> {
+    try {
+      return await Question.find({ quizId });
+    } catch (error) {
+      throw new Error(`Failed to get questions: ${error}`);
+    }
+  }
 }
