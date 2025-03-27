@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 import { QuestionService } from "./question.service";
 import { createQuestionDto } from "./question.dto";
-import { Quiz } from "@/quiz/quiz.model";
+import { Quiz } from "../quiz/quiz.model";
 
 const router = Router();
 
